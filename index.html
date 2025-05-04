@@ -1,125 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Responsive Personal Portfolio Website HTML CSS Javascript | Codehal</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!--box icons-->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Portfólio | Hardware Embarcado</title>
+  <style>
+    :root {
+      --preto: #0d0d0d;
+      --cinza: #1e1e1e;
+      --azul-escarlate: #0070ff;
+      --texto-claro: #f2f2f2;
+      --fundo-claro: #e9e9e9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--preto);
+      color: var(--texto-claro);
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    canvas#bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -9999;
+      width: 100%;
+      height: 100%;
+    }
+
+    header {
+      background-color: var(--fundo-claro);
+      color: var(--preto);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--azul-escarlate);
+      margin-bottom: 1rem;
+    }
+
+    .social-buttons {
+      margin-top: 1rem;
+    }
+
+    .social-buttons a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--azul-escarlate);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .social-buttons a:hover {
+      background-color: #005ed0;
+    }
+
+    main {
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .projeto-unico {
+      background-color: rgba(30, 30, 30, 0.9);
+      border-radius: 16px;
+      max-width: 700px;
+      width: 100%;
+      overflow: hidden;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .projeto-unico img {
+      width: 40%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .projeto-unico h3 {
+      padding: 1rem 0 0.5rem;
+      color: var(--azul-escarlate);
+    }
+
+    .projeto-unico p {
+      padding-bottom: 1rem;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--cinza);
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-    <!-- header design -->
-    <header class="header">
-        <a href="#" class="logo">Robot Blinders.</a>
-        
-        <div class="bx bx-menu" id="menu-icon"></div>
+  <canvas id="bg"></canvas>
 
-        <nav class="navbar">
-            <a href="#home" class="active">Início</a>
-            <a href="#about">Sobre mim</a>
-            <a href="#skills">Skills</a>
-        </nav>
-    </header>
-    <!-- home section design -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h1>Olá, eu sou o <span>Leonardo Alves</span></h1>
-            <div class="text-animate">
-                <h3>Entusiasta na área da robótica</h3>
-            </div>
-            <p  align="justify">Meu primeiro contato com a robótica foi no ensino médio, por volta de 2017.
-                Entre os anos de 2019 e 2020 fui professor voluntário de Robot Education, na escola
-                que me formei. Me tornei juiz voluntário da Olimpiada Brasileira de Robótica (2019 e 2023), que me proporcionou ótimas lembranças.
-                Atualmente desenvolvo projeto com a plataforma de prototipagem Arduino, utilizando C++. Além 
-                da criação de bibliotecas para a mesma. 
-            </p>
-        </div>
-        <div class="home-sci">
-            <a href="https://instagram.com/leonard_physic?igshid=MTk0NTkyODZkYg=="><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.linkedin.com/in/francisco-leonardo-alves-de-moraes-sousa-64a731295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/2bkiri"><i class='bx bxl-github' ></i></a>
-        </div>
-    </section>
-    <!-- about section design -->
-    <section class="about" id="about">
-        <h1>Trajectory</h1>
-        <h2>___</h2>
-        <div class="container">
-            <div class="card" style="--cor:#ffffff;">
-              <div class="caixaImg">
-              <img src="https://i.pinimg.com/originals/55/7c/a2/557ca2dd0647a961fa4d416cea22dbec.png">
-              </div>
-              <div class="conteudo">
-              <h2>Um jovem programador</h2>
-              <p align="justify">Como gosto de falar, sou originalmente técnico em enfermagem. Na mesma instituição
-                que me formei como técnico conheci o mundo da programação, através de um projeto de robótica (2017).
-                A primeira linguagem que tive contato foi o C, posteriormente aprendi C++ voltado a microcontroladores.
-               Atualmente me aventuro no HTML, CSS e Js.
-              </p>
-              </div>
-            </div>
-            <div class="card" style="--cor:#ffffff;">
-              <div class="caixaImg">
-              <img src="https://i.pinimg.com/originals/c3/55/50/c35550c9e3fa3a716a366b019a0a76e9.png">
-              </div>
-              <div class="conteudo">
-              <h2>De competidor a Juiz</h2>
-              <p align="justify">Me tornei juiz voluntário da Olimpíada Brasileira de Robótica (OBR),
-                nos anos de 2019 e 2023. Foi uma das melhores experiências que tive no ramo, e pretendo participar de outras
-                edições para conhecer as novas gerações de "Roboteiros".
-              </p>
-              </div>
-            </div>
-            <div class="card" style="--cor:#ffffff;">
-              <div class="caixaImg">
-              <img src="https://i.pinimg.com/originals/62/e0/62/62e062e32e8d1c301e442e034c15b54e.png">
-              </div>
-              <div class="conteudo">
-              <h2>Teacher</h2>
-              <p align="justify">Outra grande experiências que com certeza ficará na minha caixinha de lembranças
-                foi a de ser professor. O ano era 2019, e tinha acabado de adentrar a faculdade, quando o convite surgiu.
-                Toda a turma ganhou um lugar especial em meu coração. Trabalhamos juntos até mesmo na pandemia, período muito difícil para todos.
-                Durante este momento, conheci ferramentas do mundo virtual/educacional. Nunca imaginei que gravaria videos
-                para o YOUTUBE. 
-              </p>
-              </div>
-            </div>
-          </div>
-    </section>
-    <!-- Skills section design -->
-    <section class="skills" id="skills">
-        <h1>Programmer</h1>
-        <div class="wrapper">
-          <div class="containe">
-              <input type="radio" name="slide" id="c1" checked>
-              <label for="c1" class="cardi">
-                  <div class="row">
-                      <div class="icon">1</div>
-                      <div class="description">
-                          <h4>C end C++</h4>
-                          <p>Voltado a microcontroladores avançado</p>
-                      </div>
-                  </div>
-              </label>
-              <input type="radio" name="slide" id="c2" >
-              <label for="c2" class="cardi">
-                  <div class="row">
-                      <div class="icon">2</div>
-                      <div class="description">
-                          <h4>HTML end CSS</h4>
-                          <p>Construção básica</p>
-                      </div>
-                  </div>
-              </label>
-          </div>
+  <header>
+    <div class="container">
+      <img src="https://avatars.githubusercontent.com/u/118297618?s=400&u=95d226053d4e1a13b340908d101caec5ae55b680&v=4" alt="Minha Foto" class="profile-pic" />
+      <h1>F.co Leonardo A. M. Sousa</h1>
+      <p>Desenvolvedor de Hardware | Arduino • ESP32 • LoRa • IoT • Raspberry Pi • Jetson Nano • IA</p>
+      <div class="social-buttons">
+        <a href="https://github.com/leonardoalvessousa" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/francisco-leonardo-alves-de-moraes-sousa-64a731295/" target="_blank">LinkedIn</a>
       </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="projeto-unico">
+      <img src="https://raw.githubusercontent.com/leonardoalvessousa/leonardoalvessousa.github.io/refs/heads/main/img/raspblue.png" alt="Raspberry" />
+      <h3>Um de meus principais projetos: ARM Assembly Bare Metal</h3>
+      <p>
+        Um dos meus projetos mais avançados em sistemas embarcados: uma jornada completa pelo universo Bare Metal na arquitetura ARM.
+        Desenvolvido no <strong>Raspberry Pi 3 Model B</strong>, este conteúdo explora a programação em Assembly de forma direta, sem sistema operacional, permitindo controle absoluto do hardware.
+        <br /><br />
+        Ideal para reforçar os conceitos de disciplinas como <em>Microprocessadores</em>, o projeto proporciona uma compreensão sólida da interação entre software e silício. Aqui, você vai além do código — você domina a máquina.
+        <br /><br />
+        🚀 <strong>Pronto para o desafio?</strong> Comece agora pela <strong>Aula 0</strong> e mergulhe no mundo Bare Metal.
+        <br /><br />
+        🔗 <strong><a href="https://doi.org/10.5281/zenodo.15251868" target="_blank" style="color: var(--azul-escarlate); text-decoration: underline;">Acesse o projeto no Zenodo</a></strong>
+      </p>
     </section>
-    <!-- contact section design -->
-    <!-- footer design -->
-    <script src="js/script.js"></script> 
+  </main>
+
+  <footer>
+    <p>© 2025 F.co Leonardo A. M. Sousa. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+
+    let w, h;
+
+    function resize() {
+      const ratio = window.devicePixelRatio || 1;
+      w = canvas.width = window.innerWidth * ratio;
+      h = canvas.height = window.innerHeight * ratio;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    const particles = [];
+    const particleCount = 80;
+    const maxDist = 120;
+
+    let mouse = { x: null, y: null };
+
+    window.addEventListener('mousemove', e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    window.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 3 + 1,
+        dx: (Math.random() - 0.5) * 1.2,
+        dy: (Math.random() - 0.5) * 1.2
+      });
+    }
+
+    function drawLines() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < maxDist) {
+            ctx.strokeStyle = `rgba(0,112,255,${1 - dist / maxDist})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+
+        if (mouse.x !== null) {
+          const dx = particles[i].x - mouse.x;
+          const dy = particles[i].y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < maxDist) {
+            ctx.strokeStyle = `rgba(0,112,255,${1 - dist / maxDist})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = 'rgba(0,112,255,0.5)';
+      particles.forEach(p => {
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > w) p.dx *= -1;
+        if (p.y < 0 || p.y > h) p.dy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      drawLines();
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
